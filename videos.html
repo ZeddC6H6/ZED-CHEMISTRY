@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Video Library - Zed Chemistry</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400,700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                        "kid-green": "#4ade80",
+                        "kid-blue": "#60a5fa",
+                        "kid-purple": "#a78bfa",
+                        "kid-orange": "#fb923c"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans Devanagari", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1.5rem",
+                        "lg": "2.5rem",
+                        "xl": "3.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body,
+        * {
+            font-family: "Plus Jakarta Sans", "Noto Sans Devanagari", sans-serif;
+        }
+
+        .kid-card-shadow {
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.08);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .video-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen pb-32 font-display text-[#181711] dark:text-white">
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-primary/20">
+        <div class="flex items-center gap-3">
+            <a href="index.html"
+                class="size-12 rounded-full bg-primary flex items-center justify-center border-4 border-white shadow-lg overflow-hidden">
+                <img class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pxbuBRCWA_mTINxs6VYN_yOmHW8pzZ49YOr2sULby9Wuyw2HoThH8ShAxNsOEkckhw8zM11cDyqIWJeBqXZKZ4djdQnD7F0839W4Uiiya60hLQYJe9OVHoAb-KxgYicM0a0Dee4nJiCcLDHWVuvUfCgkEGFClE_8ktkNq5d1J9jNSCZokb_TwxhVqCujpoaAJNslhFxfJNDr6jWIawds3FbDvGwC-5IPjIQe6NqgCxtxPBCOS3KmXS0JLOOiO9Q7as9vsCsmFRk" />
+            </a>
+            <h1 class="text-2xl font-extrabold tracking-tight">Videos</h1>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 pt-6">
+        <!-- Search & Filter -->
+        <section class="mb-8 space-y-4">
+            <div class="relative group">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <span class="material-symbols-outlined text-[#8a8760] group-focus-within:text-primary">search</span>
+                </div>
+                <input id="videoSearch"
+                    class="block w-full pl-12 pr-4 py-4 bg-white dark:bg-[#333118] border-none ring-1 ring-primary/20 focus:ring-4 focus:ring-primary rounded-full text-lg shadow-sm placeholder:text-[#8a8760] transition-all"
+                    placeholder="Search videos..." type="text" />
+            </div>
+
+            <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 px-1">
+                <button onclick="filterCategory('All')"
+                    class="cat-btn bg-primary px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap active:scale-95 transition-transform">All</button>
+                <button onclick="filterCategory('Organic')"
+                    class="cat-btn bg-white dark:bg-zinc-800 px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap border border-primary/20 active:scale-95 transition-transform">Organic</button>
+                <button onclick="filterCategory('Physical')"
+                    class="cat-btn bg-white dark:bg-zinc-800 px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap border border-primary/20 active:scale-95 transition-transform">Physical</button>
+                <button onclick="filterCategory('Inorganic')"
+                    class="cat-btn bg-white dark:bg-zinc-800 px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap border border-primary/20 active:scale-95 transition-transform">Inorganic</button>
+                <button onclick="filterCategory('Tips')"
+                    class="cat-btn bg-white dark:bg-zinc-800 px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap border border-primary/20 active:scale-95 transition-transform">Board
+                    Tips</button>
+                <button onclick="filterCategory('Practical')"
+                    class="cat-btn bg-white dark:bg-zinc-800 px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap border border-primary/20 active:scale-95 transition-transform">Practicals</button>
+                <button onclick="filterCategory('General')"
+                    class="cat-btn bg-white dark:bg-zinc-800 px-6 py-2 rounded-full font-bold shadow-sm whitespace-nowrap border border-primary/20 active:scale-95 transition-transform">Other</button>
+            </div>
+        </section>
+
+        <!-- Video Grid -->
+        <div id="videoContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Videos will be injected here -->
+        </div>
+
+        <div id="noResults" class="hidden text-center py-20">
+            <span class="material-symbols-outlined text-8xl text-zinc-300 mb-4 block">sentiment_very_dissatisfied</span>
+            <p class="text-xl font-bold text-zinc-500">No videos found!</p>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Dock -->
+
+    <!-- Unified Navigation Dock -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white dark:bg-[#2d2c18] rounded-full shadow-2xl px-2 py-2 flex items-center justify-between border border-primary/20 z-50">
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors" href="index.html">
+            <span class="material-symbols-outlined text-2xl font-bold">home</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full bg-primary text-[#181711]" href="videos.html">
+            <span class="material-symbols-outlined text-2xl font-bold">play_circle</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Videos</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors" href="courses.html">
+            <span class="material-symbols-outlined text-2xl font-bold">explore</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Explore</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors" href="games.html">
+            <span class="material-symbols-outlined text-2xl font-bold">flare</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">My Lab</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors" href="notes.html">
+            <span class="material-symbols-outlined text-2xl font-bold">auto_stories</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Library</p>
+        </a>
+    </nav>
+
+    <script src="js/videos-data.js"></script>
+    <script>
+        let currentCategory = 'All';
+        const searchInput = document.getElementById('videoSearch');
+        const videoContainer = document.getElementById('videoContainer');
+        const noResults = document.getElementById('noResults');
+
+        function renderVideos(filteredVideos) {
+            videoContainer.innerHTML = '';
+
+            if (filteredVideos.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+
+            filteredVideos.forEach(v => {
+                const card = document.createElement('a');
+                card.href = `https://www.youtube.com/watch?v=${v.id}`;
+                card.target = '_blank';
+                card.className = 'video-card group bg-white dark:bg-[#333118] rounded-xl overflow-hidden shadow-md border border-primary/10 transition-all hover:-translate-y-1 active:scale-95';
+
+                card.innerHTML = `
+                    <div class="aspect-video relative overflow-hidden bg-black">
+                        <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" class="w-full h-full object-cover transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                            <span class="material-symbols-outlined text-white text-5xl drop-shadow-lg opacity-80 group-hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1">play_circle</span>
+                        </div>
+                        ${v.duration ? `<div class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">${Math.floor(v.duration / 60)}:${(v.duration % 60).toString().padStart(2, '0')}</div>` : ''}
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary-700 uppercase tracking-tighter">${v.category}</span>
+                        </div>
+                        <h3 class="font-bold text-sm line-clamp-2 leading-snug group-hover:text-primary transition-colors">${v.title}</h3>
+                    </div>
+                `;
+                videoContainer.appendChild(card);
+            });
+
+            // Animate cards entry
+            gsap.from("#videoContainer > a", {
+                duration: 0.4,
+                y: 20,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power2.out"
+            });
+        }
+
+        function filterVideos() {
+            const query = searchInput.value.toLowerCase();
+            const filtered = VIDEO_DATA.filter(v => {
+                const matchCategory = currentCategory === 'All' || v.category === currentCategory;
+                const matchSearch = v.title.toLowerCase().includes(query);
+                return matchCategory && matchSearch;
+            });
+            renderVideos(filtered);
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+
+            // Update UI buttons
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.innerText.includes(cat) || (cat === 'All' && btn.innerText === 'All')) {
+                    btn.classList.add('bg-primary');
+                    btn.classList.remove('bg-white', 'dark:bg-zinc-800');
+                } else {
+                    btn.classList.remove('bg-primary');
+                    btn.classList.add('bg-white', 'dark:bg-zinc-800');
+                }
+            });
+
+            filterVideos();
+        }
+
+        searchInput.addEventListener('input', filterVideos);
+
+        // Initial render
+        renderVideos(VIDEO_DATA);
+    </script>
+</body>
+
+</html>
