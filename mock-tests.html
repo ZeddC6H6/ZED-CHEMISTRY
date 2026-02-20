@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Zed Chemistry Kids - Mock Tests</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                        "accent-blue": "#60a5fa",
+                        "accent-purple": "#a78bfa",
+                        "accent-green": "#4ade80",
+                        "accent-orange": "#fb923c",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1.5rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181711] antialiased">
+    <!-- Main Container -->
+    <div
+        class="relative flex min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-10 bg-background-light/80 backdrop-blur-md px-4 pt-6 pb-2 flex items-center gap-4">
+            <a href="index.html" class="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm border border-primary/20 text-[#181711] hover:scale-105 transition-transform"><span class="material-symbols-outlined">arrow_back</span></a>
+            <div class="flex flex-col">
+                <h1 class="text-2xl font-800 leading-tight tracking-tight text-[#181711]">मॉक टेस्ट</h1>
+                <p class="text-xs font-semibold text-[#8a8760] uppercase tracking-widest">Zed Chemistry Kids</p>
+            </div>
+        </header>
+        <!-- Search Bar Section -->
+        <div class="px-4 py-6">
+            <div class="relative group">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-primary">
+                    <span class="material-symbols-outlined">search</span>
+                </div>
+                <input
+                    class="block w-full h-14 pl-12 pr-4 bg-white border-2 border-transparent focus:border-primary focus:ring-0 rounded-full shadow-lg shadow-primary/5 text-lg font-medium placeholder-[#8a8760]"
+                    placeholder="एक मज़ेदार टेस्ट खोजें..." type="text" />
+            </div>
+        </div>
+        <!-- Featured / Info Section -->
+        <div class="px-4 mb-2 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-[#181711]">एक विषय चुनें</h2>
+            <span class="text-sm font-bold text-primary bg-background-dark px-3 py-1 rounded-full">4 नए
+                टेस्ट</span>
+        </div>
+        <!-- Scrollable Content Area -->
+        <div class="flex-1 px-4 space-y-6 pb-32">
+            <!-- Category Card: Basics of Atoms -->
+            <div
+                class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-white hover:border-primary transition-all group">
+                <div class="relative h-44 w-full bg-accent-blue/10 flex items-center justify-center overflow-hidden">
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-blue via-transparent to-transparent">
+                    </div>
+                    <img class="h-32 w-32 object-contain group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Playful 3D illustration of an atom with colorful electrons"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl7xytQOazkp_df3_9tzuGWW_G-w-YZU1kN5fu-u1XEQbfXOvSMXU1_c5EpVSc_GX6egQuMka6DTz7nUctc72UGhZ00y3Xu-kVdM5qnqprUazCgh6al4Bsu11u_TzCt4Wrd0Z-CURHBlWkEKYgsNdtft1OfRISbO_DkBPIv9Xx5Zr8TgsIXrCGgcisgyLRmvuSnqSwopGI8XDHXNdrf9P39CnmABeQwz8f_LlxkNRiHGFf8nWozPIOrwXEke1STgtP0IgmZqhhPxg" />
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#181711]">परमाणु की
+                                बुनियादी बातें</h3>
+                            <p class="text-[#8a8760] font-medium">Discover tiny building blocks!</p>
+                        </div>
+                        <div
+                            class="bg-accent-blue/10 text-accent-blue px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">list_alt</span> 10 Qs
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-white bg-primary flex items-center justify-center text-[10px] font-bold">
+                                ⭐</div>
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-white bg-primary flex items-center justify-center text-[10px] font-bold">
+                                ⭐</div>
+                        </div>
+                        <button onclick="window.location.href='quiz.html'"
+                            class="bg-primary text-[#181711] px-6 py-3 rounded-full font-bold shadow-[0_4px_14px_0_rgba(244,226,37,0.39)] hover:brightness-105 active:scale-95 transition-all">टेस्ट
+                            शुरू करें</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Category Card: Chemical Bonding -->
+            <div
+                class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-white hover:border-primary transition-all group">
+                <div class="relative h-44 w-full bg-accent-purple/10 flex items-center justify-center overflow-hidden">
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-purple via-transparent to-transparent">
+                    </div>
+                    <img class="h-32 w-32 object-contain group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Colorful cartoon molecules joining hands in a bond"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsIFp70NdV1e1od8vOd_zERrQxBU2VV7J8S6QPYk04GusAsCGttM71en55cl7MTPDn7MU8ldnjkZiJzLtZwNjSvmEeRkkb8KPpwVMKdfB69qSQCkr726u6FXVNMByRchiC2PYjX1V_QeZLar2qgm4HEEWfHwRcH1JHiO72CP3qNxJDgnIJO5Nr_t0VAzqmia_oOwO_LjZgycEaD9FBmfnb15WM3tU9Q3EA1xC9w7VUFMa_9vmKu550hQL0oLKj5ebvMJDfJddiyhc" />
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#181711]">रासायनिक बंधन</h3>
+                            <p class="text-[#8a8760] font-medium">How molecules stick together.</p>
+                        </div>
+                        <div
+                            class="bg-accent-purple/10 text-accent-purple px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">list_alt</span> 15 Qs
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-400">
+                                ?</div>
+                        </div>
+                        <button
+                            class="bg-primary text-[#181711] px-6 py-3 rounded-full font-bold shadow-[0_4px_14px_0_rgba(244,226,37,0.39)] hover:brightness-105 active:scale-95 transition-all">टेस्ट
+                            शुरू करें</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Category Card: Acids & Bases -->
+            <div
+                class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-white hover:border-primary transition-all group">
+                <div class="relative h-44 w-full bg-accent-green/10 flex items-center justify-center overflow-hidden">
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-green via-transparent to-transparent">
+                    </div>
+                    <img class="h-32 w-32 object-contain group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Vibrant green bubbling test tube with sparkles"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqxU2ZkZUICH2R_KQmvGs_WIveykCRRXnoz1PGS3PaJccW2_GZ_a8emsXbHmUvXzdcLaQCqj23kOP7bo4P__c5cf_Vi242Ftif1EdbF-A71n_LqLxK9DhzF9vnqs6y9GXvDt-I2GUnlvgELsj2Fj5UY8OPiyNcIg9XoDBKMN5G8FawfCI6IwhN_PltQvUTo0Wa0Oc7rHA9ryZwQV-sBRmYpsI5M4GLW2kBDv62pHa_C2AI9YUlaM5KXeYRMjWJuR2ANL8PP-n5ONM" />
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#181711]">अम्ल और क्षार</h3>
+                            <p class="text-[#8a8760] font-medium">Fizzing and popping fun!</p>
+                        </div>
+                        <div
+                            class="bg-accent-green/10 text-accent-green px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">list_alt</span> 12 Qs
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-white bg-primary flex items-center justify-center text-[10px] font-bold">
+                                ⭐</div>
+                        </div>
+                        <button
+                            class="bg-primary text-[#181711] px-6 py-3 rounded-full font-bold shadow-[0_4px_14px_0_rgba(244,226,37,0.39)] hover:brightness-105 active:scale-95 transition-all">टेस्ट
+                            शुरू करें</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Category Card: Periodic Table -->
+            <div
+                class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-white hover:border-primary transition-all group">
+                <div class="relative h-44 w-full bg-accent-orange/10 flex items-center justify-center overflow-hidden">
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-orange via-transparent to-transparent">
+                    </div>
+                    <img class="h-32 w-32 object-contain group-hover:scale-110 transition-transform duration-500"
+                        data-alt="A colorful grid representing the periodic table"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB31goDywlF5wLXInbDjgOMYp3P4xWPkf6fZDvIYK-T4UJpAo4eKHsgngFnkCl3xQ1dhPopxw_uJJWRJD4SXTutR6wHwE4UNu6I3L7guesfnfXaK02RU9IsNEdmmVglbbTOSTajHFDSZyKdCrLRPmW3Rp1DvPEQyAQEm37gp2VUtrSEIwChe8CW3qLCw2KG5lC5M8ZOz6CFHHTD3jAJlVLBf9mR_CzjDrgxKD3FoSJ5j4wvWilbZzud2_DmXcQitPzELV7PyqSBMks" />
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#181711]">आवर्त सारणी</h3>
+                            <p class="text-[#8a8760] font-medium">Meet all the elements!</p>
+                        </div>
+                        <div
+                            class="bg-accent-orange/10 text-accent-orange px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">list_alt</span> 20 Qs
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-400">
+                                ?</div>
+                        </div>
+                        <button
+                            class="bg-primary text-[#181711] px-6 py-3 rounded-full font-bold shadow-[0_4px_14px_0_rgba(244,226,37,0.39)] hover:brightness-105 active:scale-95 transition-all">टेस्ट
+                            शुरू करें</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Navigation Bar -->
+        <div
+            class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md bg-background-dark text-white rounded-full p-2 flex items-center justify-around shadow-2xl z-50">
+            <a class="flex flex-col items-center p-2 rounded-full hover:bg-white/10 transition-colors"
+                href="index.html"><span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] mt-1 font-bold">होम</span>
+            </a>
+            <a class="flex flex-col items-center p-2 rounded-full hover:bg-white/10 transition-colors"
+                href="courses.html"><span class="material-symbols-outlined">explore</span>
+                <span class="text-[10px] mt-1 font-bold">खोजें</span>
+            </a>
+            <a class="flex flex-col items-center p-2 rounded-full hover:bg-white/10 transition-colors"
+                href="games.html"><span class="material-symbols-outlined">science</span>
+                <span class="text-[10px] mt-1 font-bold">मेरी लैब</span>
+            </a>
+            <a class="flex flex-col items-center bg-primary text-background-dark h-14 w-14 rounded-full justify-center shadow-lg transition-transform active:scale-90"
+                href="notes.html"><span class="material-symbols-outlined">menu_book</span>
+                <span class="text-[9px] font-800 uppercase leading-none">लाइब्रेरी</span>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>विजेता सूची - जेड केमिस्ट्री किड्स</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .podium-shadow {
+            box-shadow: 0 10px 25px -5px rgba(244, 226, 37, 0.3);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#181711] font-display">
+    <div
+        class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 pt-6">
+            <button
+                class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-white/10 hover:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-2xl">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-bold tracking-tight">विजेता सूची</h1>
+            <button class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-white/10">
+                <span class="material-symbols-outlined text-2xl">emoji_events</span>
+            </button>
+        </header>
+        <!-- Toggle Switch -->
+        <div class="px-6 py-2">
+            <div
+                class="flex h-12 w-full items-center justify-center rounded-full bg-background-light dark:bg-white/5 p-1.5">
+                <label
+                    class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 transition-all has-[:checked]:bg-primary has-[:checked]:shadow-sm text-sm font-bold">
+                    <span>साप्ताहिक</span>
+                    <input checked="" class="hidden" name="leaderboard-toggle" type="radio" />
+                </label>
+                <label
+                    class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 transition-all has-[:checked]:bg-primary has-[:checked]:shadow-sm text-sm font-bold opacity-60 has-[:checked]:opacity-100">
+                    <span>सर्वकालिक</span>
+                    <input class="hidden" name="leaderboard-toggle" type="radio" />
+                </label>
+            </div>
+        </div>
+        <!-- Podium Section -->
+        <div class="relative px-4 pt-8 pb-4 flex items-end justify-center gap-2 mt-4">
+            <!-- 2nd Place -->
+            <div class="flex flex-col items-center gap-2 mb-4">
+                <div class="relative">
+                    <div class="size-20 rounded-full border-4 border-slate-300 overflow-hidden bg-white">
+                        <img class="w-full h-full object-cover" data-alt="Avatar of 2nd place student"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcRxjp57hizXZHbq6pIKg2naN00jnPQhL50PU--frTutQ3__5qdg5_9DnB2Me4Wa4SztBr7Ph9ae9gu7UjvCdJJT9zRavuNF_md6dC1LXGpswVVJVz3GJIhQtMlKBWnwBOUpg0ecKxddF8Kp1gQovt5K6e8WEMTofDhJM1XTdjnQHURxw099cQxifCV-kdKJ5EJerUDTt-dpBcWYljhGOzWY2g4JaYUNJOrpVQNPi4Y5EPktrEZk5wuM27UIDF_8917liYjf8sh8o" />
+                    </div>
+                    <div
+                        class="absolute -bottom-2 -right-1 bg-slate-300 size-7 rounded-full flex items-center justify-center text-white border-2 border-white">
+                        <span class="text-xs font-bold">2</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs font-bold truncate w-20">लियो लिथियम</p>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase">9.2k एक्सपी</p>
+                </div>
+            </div>
+            <!-- 1st Place -->
+            <div class="flex flex-col items-center gap-3 z-10">
+                <div class="relative">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-primary drop-shadow-md">
+                        <span class="material-symbols-outlined text-4xl"
+                            style="font-variation-settings: 'FILL' 1">workspace_premium</span>
+                    </div>
+                    <div
+                        class="size-28 rounded-full border-[6px] border-primary podium-shadow overflow-hidden bg-white scale-110">
+                        <img class="w-full h-full object-cover" data-alt="Avatar of 1st place student Alex Beaker"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtSk8ynCDpa9PaaNfEAbQE2Vqsp_mWOeEamdo1s7T0XcWqAaZAZbYjuB5Ilgn-Dzk2pWVPqL9ypMIhDwm8PrUHPtTqxfodka4xDTA-Grw_dQSXe_s32t3bkii_gGLrrIJcxFruIatQqkAhETF4J2j73uusRMgbSjJsOQtfMJLzX3enqG1zzKLQjj5WrHmmTFQxYEaPZgJ8Txhr9VDDNcl-BK98VyLSQgq9mSL-PjWge0RpqYEs7jXzbip2oZsOohGSV21agvi90ws" />
+                    </div>
+                    <div
+                        class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary px-3 py-0.5 rounded-full flex items-center justify-center text-[#181711] border-4 border-white">
+                        <span class="text-sm font-black">1</span>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <p class="text-sm font-black truncate w-24">एलेक्स बीकर</p>
+                    <p class="text-xs text-primary font-black bg-black px-2 py-0.5 rounded-full inline-block">12.5k
+                        एक्सपी</p>
+                </div>
+            </div>
+            <!-- 3rd Place -->
+            <div class="flex flex-col items-center gap-2 mb-2">
+                <div class="relative">
+                    <div class="size-16 rounded-full border-4 border-orange-400 overflow-hidden bg-white">
+                        <img class="w-full h-full object-cover" data-alt="Avatar of 3rd place student"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTPs7O95oZ3PhOc3STBR3yN2EvocmGMpQyQLkJpA0Rzj0Vde0ViAFl1VOM3ZnkWzjS_2E2b4wPqBKp9h3WeFz7jgklaewTE4fKAWlvYeoEyo4Fkj3-9EOdP6RS2OMmLU2ceFZ9SDyAqV8uUuRoYQ7HxRtDHR3UFYbpef8Pz6AlAUY5j1AgcUXkjnYnONrRli45ibEFSF9jOC1kJLfvOsFVR5XpZUo0pfMF1YJYy-E7oPAxFG-UK3g4FPVLiFzym2RWFfZdq1afeWs" />
+                    </div>
+                    <div
+                        class="absolute -bottom-2 -right-1 bg-orange-400 size-6 rounded-full flex items-center justify-center text-white border-2 border-white">
+                        <span class="text-[10px] font-bold">3</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs font-bold truncate w-20">मिया नियॉन</p>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase">8.8k एक्सपी</p>
+                </div>
+            </div>
+        </div>
+        <!-- Ranking List -->
+        <div
+            class="flex-1 bg-background-light dark:bg-white/5 rounded-t-[2.5rem] mt-6 px-4 py-6 overflow-y-auto space-y-3">
+            <!-- Rank 4 -->
+            <div
+                class="flex items-center gap-4 bg-white dark:bg-background-dark p-3 rounded-2xl shadow-sm border border-black/5">
+                <span class="w-6 text-center font-black text-slate-400">4</span>
+                <div class="size-12 rounded-full overflow-hidden bg-primary/20">
+                    <img class="w-full h-full object-cover" data-alt="Student avatar rank 4"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBVBWklZVWyy2w7taA9_UhgmVgapsnl84E0HHYJLsVGCJLbZ4rr4u1mOWPIBRrEgIUk9nEaHg_Yvd1eH824qSf9AWRc-iabMAX2rI_sDg3UKwqSUW7APM5Wcnn4XmiToyZ-2WlFW01iHTMpptntPKpfovU5AQS0_rENHFq5l5zmlmMm3B_Q72etikreYcLw-I8WCOTm_yDkssTsHXzicvkj8Kth08KL9A4YlIlElP0LAEuDDw-UyILc2mOzOrV2BNSQzSxxFnargA" />
+                </div>
+                <div class="flex-1">
+                    <p class="font-bold text-sm">कालेब कार्बन</p>
+                    <p class="text-[10px] text-slate-500 font-semibold">नोबल गैस रैंक</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-black text-sm">7,420</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase">एक्सपी</p>
+                </div>
+            </div>
+            <!-- Rank 5 (Current User Highlight) -->
+            <div
+                class="flex items-center gap-4 bg-primary p-3 rounded-2xl shadow-md border-2 border-black/5 ring-4 ring-primary/20">
+                <span class="w-6 text-center font-black text-black">5</span>
+                <div class="size-12 rounded-full overflow-hidden border-2 border-black/10 bg-white">
+                    <img class="w-full h-full object-cover" data-alt="User personal avatar"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz47YQNzpW1bnWz9Ys9gewgyAJKb4sNzc--DmOpCT6rGbzMOB59CeJB9jbUyjr11J95e-t0erfGGjNndKkqepndmWx3Jhk7jA4BBjbkdLrtLyVGAMYDfW0FPH6qJJuxUDxQ8uzXcYmqTRAptEM9Yr8smHxvksAaIPOyrD__Adjrzm0xcNbJTGfpwQJ34D43XTLyFC8BV_ewV2teoNolJ8Rw6DySdFYLpKu31LY32U6_Xrc4Xqjju5eb06bNbHJ7E1i8Dq7h-fF174" />
+                </div>
+                <div class="flex-1">
+                    <p class="font-black text-sm">आप (सैम सोल)</p>
+                    <p class="text-[10px] text-black/60 font-black uppercase">चौथे स्थान के करीब!</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-black text-sm">आप (सैम सोल)</p>
+                    <p class="text-[10px] text-black/60 font-bold uppercase">एक्सपी</p>
+                </div>
+            </div>
+            <!-- Rank 6 -->
+            <div
+                class="flex items-center gap-4 bg-white dark:bg-background-dark p-3 rounded-2xl shadow-sm border border-black/5">
+                <span class="w-6 text-center font-black text-slate-400">6</span>
+                <div class="size-12 rounded-full overflow-hidden bg-primary/20">
+                    <img class="w-full h-full object-cover" data-alt="Student avatar rank 6"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc0FrRPfHSHpsIOeIUnMS3e_OlKmZOqgFbPCm3k67oEiHYF5vclR6LhuFGUUwHVqnVozE1hntO04bWKNjhqlx8OoTVYyD2zZsDsgSgllE8LLCvmjbziI3HP1udFkR8KEYvk4M10ssC_VPmWMNkGsE8P-s8DlLWp0z2RBt928IpKpeDC7vEIWokzVFdNnVnYZcuTrsypr38exCz9Xnh7Nieekik6K4UmWzClIxLfBZ92b7MyNuHCXROe4HXCw3JoFSrnT2-Mi6WpaQ" />
+                </div>
+                <div class="flex-1">
+                    <p class="font-bold text-sm">ज़ो जिंक</p>
+                    <p class="text-[10px] text-slate-500 font-semibold">संक्रमण धातु</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-black text-sm">5,800</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase">एक्सपी</p>
+                </div>
+            </div>
+            <!-- Rank 7 -->
+            <div
+                class="flex items-center gap-4 bg-white dark:bg-background-dark p-3 rounded-2xl shadow-sm border border-black/5 opacity-80">
+                <span class="w-6 text-center font-black text-slate-400">7</span>
+                <div class="size-12 rounded-full overflow-hidden bg-primary/20">
+                    <img class="w-full h-full object-cover" data-alt="Student avatar rank 7"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-sJKYt_kDvlZ78mPJjw810ZLezPVFfV_XCxtEnEdSTG9MZi-7SyxIprxA3gAOf92diOKsmmxRE77bVSxpDEJ_ndwu4Y960HdiWgb8EaN8pBjcd5TqGP_DxQ-SEqWD3jNOQptJJVdB4QJFM-thW2YOBBQrAwmvaVkUzE-cSH2cvWO-eEpvMpYHhUWnpTytkF4bqYMfl3wfSln7LsqPXEAk0q8qoUP-Xyo3_VJ9DHeMACEDwsiBnRFMQgIc8a4v3iUwUUwiMC4g6Mk" />
+                </div>
+                <div class="flex-1">
+                    <p class="font-bold text-sm">ऑस्कर ऑक्सीजन</p>
+                    <p class="text-[10px] text-slate-500 font-semibold">क्षारीय धातु</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-black text-sm">4,200</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase">एक्सपी</p>
+                </div>
+            </div>
+            <div class="py-10 text-center">
+                <p
+                    class="text-xs text-slate-400 font-bold uppercase tracking-widest flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">science</span> रैंक बढ़ाने के लिए प्रयोग करते रहें!
+                </p>
+            </div>
+        </div>
+        <!-- Bottom Navigation -->
+        <nav class="bg-white dark:bg-background-dark border-t border-black/5 px-6 pb-8 pt-4">
+            <div class="flex items-center justify-between">
+                <a class="flex flex-col items-center gap-1 group" href="#">
+                    <div
+                        class="size-10 rounded-full flex items-center justify-center transition-all group-hover:bg-primary/10">
+                        <span class="material-symbols-outlined text-2xl text-slate-400">home</span>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">मुख्य पृष्ठ</span>
+                </a>
+                <a class="flex flex-col items-center gap-1 group" href="#">
+                    <div
+                        class="size-10 rounded-full flex items-center justify-center transition-all group-hover:bg-primary/10">
+                        <span class="material-symbols-outlined text-2xl text-slate-400">explore</span>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">खोजें</span>
+                </a>
+                <a class="flex flex-col items-center gap-1 group" href="#">
+                    <div
+                        class="size-12 -mt-4 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-background-dark">
+                        <span class="material-symbols-outlined text-2xl text-black">science</span>
+                    </div>
+                    <span class="text-[10px] font-black text-black uppercase">मेरी लैब</span>
+                </a>
+                <a class="flex flex-col items-center gap-1 group" href="#">
+                    <div class="size-10 rounded-full flex items-center justify-center bg-primary/20 text-black">
+                        <span class="material-symbols-outlined text-2xl"
+                            style="font-variation-settings: 'FILL' 1">leaderboard</span>
+                    </div>
+                    <span class="text-[10px] font-black text-black uppercase">रैंकिंग</span>
+                </a>
+                <a class="flex flex-col items-center gap-1 group" href="#">
+                    <div
+                        class="size-10 rounded-full flex items-center justify-center transition-all group-hover:bg-primary/10">
+                        <span class="material-symbols-outlined text-2xl text-slate-400">person</span>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">प्रोफ़ाइल</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

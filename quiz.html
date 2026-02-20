@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chemistry Kids Quiz</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .radio-custom:checked+div {
+            border-color: #f4e225;
+            background-color: rgba(244, 226, 37, 0.1);
+            border-width: 4px;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-0 sm:p-4">
+    <div
+        class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-white dark:bg-[#1c1b0d] shadow-2xl overflow-hidden sm:rounded-xl">
+        <!-- Top Navigation Bar -->
+        <div class="flex items-center justify-between p-6 pb-2">
+            <a href="index.html"
+                class="flex items-center justify-center size-12 rounded-full bg-background-light dark:bg-background-dark text-[#181711] dark:text-white transition-transform active:scale-95">
+                <span class="material-symbols-outlined">close</span>
+            </a>
+            <div class="flex flex-col items-center">
+                <h2 id="progress-text"
+                    class="text-[#181711] dark:text-white text-lg font-extrabold leading-tight tracking-tight">
+                    Loading...</h2>
+            </div>
+            <button
+                class="flex items-center justify-center size-12 rounded-full bg-background-light dark:bg-background-dark text-[#181711] dark:text-white transition-transform active:scale-95">
+                <span class="material-symbols-outlined">help</span>
+            </button>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="flex flex-col gap-3 px-6 py-4">
+            <div class="flex gap-6 justify-between items-end">
+                <div class="flex flex-col">
+                    <p class="text-[#181711] dark:text-white text-sm font-bold uppercase tracking-wider opacity-60">Your
+                        Progress</p>
+                    <p class="text-[#181711] dark:text-white text-lg font-extrabold leading-none mt-1">Keep it up,
+                        Scientist! 🧪</p>
+                </div>
+                <!-- XP Display -->
+                <p class="text-primary text-xl font-extrabold leading-none"><span data-gamify="xp">0</span> XP</p>
+            </div>
+            <div class="h-4 w-full rounded-full bg-background-light dark:bg-background-dark p-1">
+                <div id="progress-bar" class="h-full rounded-full bg-primary transition-all duration-500"
+                    style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- Main Question Section -->
+        <div class="flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
+            <div class="mb-6 inline-flex items-center justify-center p-4 bg-primary/20 rounded-full">
+                <span class="material-symbols-outlined text-primary text-4xl"
+                    style="font-variation-settings: 'FILL' 1">science</span>
+            </div>
+            <h1 id="question-text"
+                class="text-[#181711] dark:text-white text-3xl font-extrabold leading-tight tracking-tight">Loading
+                Question...</h1>
+        </div>
+
+        <!-- Multiple Choice Options Container -->
+        <div id="options-container" class="grid grid-cols-1 gap-4 px-6 pb-8">
+            <!-- Options injected by JS -->
+        </div>
+
+        <!-- Footer Button -->
+        <div class="px-6 pb-8 pt-2">
+            <button id="next-button"
+                class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-full h-16 bg-primary text-[#181711] text-xl font-extrabold shadow-[0_6px_0_0_#d1c11a] active:shadow-none active:translate-y-[6px] transition-all">
+                <span>Submit Answer</span>
+                <span class="material-symbols-outlined">rocket_launch</span>
+            </button>
+        </div>
+
+        <!-- Encouragement Footer -->
+        <div class="text-center pb-6">
+            <p class="text-[#8a8760] text-sm font-medium italic">Level <span data-gamify="level">1</span> Chemist</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/gamification.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>

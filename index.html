@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Zed Chemistry - Kids Lab</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400,700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            // ... (existing config)
+            // I will not replace the whole config, just the top part
+            // actually I should use multi_replace for safer edits
+
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                        "kid-green": "#4ade80",
+                        "kid-blue": "#60a5fa",
+                        "kid-purple": "#a78bfa",
+                        "kid-orange": "#fb923c"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1.5rem",
+                        "lg": "2.5rem",
+                        "xl": "3.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .bubble-shadow {
+            box-shadow: 0 10px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .kid-card-shadow {
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.08);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen pb-24 font-display text-[#181711] dark:text-white">
+    <!-- Header Section -->
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-primary/20">
+        <div class="flex items-center gap-3">
+            <div
+                class="size-12 rounded-full bg-primary flex items-center justify-center border-4 border-white shadow-lg overflow-hidden">
+                <img class="w-full h-full object-cover" data-alt="Zed Chemistry friendly bubbling beaker logo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pxbuBRCWA_mTINxs6VYN_yOmHW8pzZ49YOr2sULby9Wuyw2HoThH8ShAxNsOEkckhw8zM11cDyqIWJeBqXZKZ4djdQnD7F0839W4Uiiya60hLQYJe9OVHoAb-KxgYicM0a0Dee4nJiCcLDHWVuvUfCgkEGFClE_8ktkNq5d1J9jNSCZokb_TwxhVqCujpoaAJNslhFxfJNDr6jWIawds3FbDvGwC-5IPjIQe6NqgCxtxPBCOS3KmXS0JLOOiO9Q7as9vsCsmFRk" />
+            </div>
+            <h1 class="text-2xl font-extrabold tracking-tight text-[#181711] dark:text-white">Zed <span
+                    class="text-primary">Chemistry</span></h1>
+        </div>
+        <div class="flex gap-2">
+            <button
+                class="size-12 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/40 transition-colors">
+                <span class="material-symbols-outlined text-3xl text-[#181711] font-bold">search</span>
+            </button>
+            <button
+                class="size-12 rounded-full bg-kid-orange/20 flex items-center justify-center hover:bg-kid-orange/40 transition-colors">
+                <span class="material-symbols-outlined text-3xl text-kid-orange font-bold">person</span>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <main class="max-w-4xl mx-auto px-4 pt-6">
+        <div
+            class="relative overflow-hidden rounded-xl aspect-[16/7] md:aspect-[21/7] bg-primary flex items-center justify-between p-8 md:p-12 mb-8 group">
+            <div class="z-10 max-w-[60%]">
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight text-[#181711] mb-4 hero-animate">
+                    Welcome, <br />Future Scientist!
+                </h2>
+                <button
+                    class="bg-white text-[#181711] px-8 py-3 rounded-full font-bold text-lg hover:scale-105 transition-transform bubble-shadow hero-animate">
+                    Start Experiment
+                </button>
+            </div>
+            <div class="absolute right-0 bottom-0 h-full w-1/2 flex items-end justify-center pointer-events-none">
+                <img class="h-[120%] object-contain drop-shadow-2xl translate-y-8"
+                    data-alt="Cartoon scientist holding a glowing test tube"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGsSauXLtcAFEXRSTNZhoBwoJsn_f7uwToczVcKeCB1ga0iblJCZyYdX9VfpOY3TCoh8BEYrXrBFxYOhl2llVc320Lftkj8Yb91eJ4S99IqQ1SOOhU4LjmFTQ3TFnIq3iY2JyHGjzvaqN8AkVgXnIY_tb5KDSC_-hl0XDdFgnpw6BZdsxek4FAssz41JBQbdMSwVLyMLQZfUP9fSiQdxqcLTq5IQCmzBxw4Vtl53X5lyQdGfK8ySSm4utWgnODaGM57n6mRsU5YfM" />
+            </div>
+            <!-- Decorative Bubbles -->
+            <div class="absolute top-4 right-1/4 w-8 h-8 rounded-full bg-white/40 blur-sm float-icon"></div>
+            <div class="absolute bottom-12 right-1/3 w-12 h-12 rounded-full bg-white/20 blur-md float-icon"></div>
+        </div>
+        <!-- Primary Navigation (Kids Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Notes Button -->
+            <a class="flex flex-col items-center gap-4 p-6 bg-primary rounded-xl kid-card-shadow transition-transform hover:-translate-y-1 active:scale-95"
+                href="notes.html">
+                <div class="size-20 bg-white rounded-full flex items-center justify-center shadow-inner">
+                    <span class="material-symbols-outlined text-5xl text-primary font-bold">edit_note</span>
+                </div>
+                <span class="text-xl font-extrabold text-[#181711]">Notes</span>
+            </a>
+            <!-- Mock Tests Button -->
+            <a class="flex flex-col items-center gap-4 p-6 bg-kid-green rounded-xl kid-card-shadow transition-transform hover:-translate-y-1 active:scale-95"
+                href="mock-tests.html">
+                <div class="size-20 bg-white rounded-full flex items-center justify-center shadow-inner">
+                    <span class="material-symbols-outlined text-5xl text-kid-green font-bold">quiz</span>
+                </div>
+                <span class="text-xl font-extrabold text-white">Mock Tests</span>
+            </a>
+            <!-- Quizzes Button -->
+            <a class="flex flex-col items-center gap-4 p-6 bg-kid-blue rounded-xl kid-card-shadow transition-transform hover:-translate-y-1 active:scale-95"
+                href="quiz.html">See All</a>
+            </div>
+            <div class="flex gap-6 overflow-x-auto hide-scrollbar pb-6 -mx-4 px-4 snap-x">
+                <!-- Video Card 1 -->
+                <div class="flex-none w-72 snap-start">
+                    <div class="relative group cursor-pointer">
+                        <div class="aspect-video rounded-xl overflow-hidden border-4 border-white shadow-lg relative">
+                            <img class="w-full h-full object-cover" data-alt="Baking soda volcano experiment video"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8CFb-NXC9GdCVwcxKZNJOhvqg5XXMNIgkySSFefubOXSEdTvaH6JjYhEB7YpHA5cY3vw44XIAEcCvcaa5IJ7Jez-S5DRIDkq4ClOihLBxeoivQJv8LPNj2CqbOU9_x3y71dBC_KHo95Ua0IvSK6NNB-koMT-1TJSoF_QukYIZD6rl1_RRv2aouoAbjHB6JjaWfYvQDqjnJBBywspiSelJbTA_Xv6hDuf55n1dTvFWnCxB2vEX-fBK2TT-FcWWsxh5e-m8friOaKs" />
+                            <div
+                                class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                <span
+                                    class="material-symbols-outlined text-6xl text-white drop-shadow-lg opacity-90 group-hover:scale-110 transition-transform">play_arrow</span>
+                            </div>
+                            <div
+                                class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-bold">
+                                12:45</div>
+                        </div>
+                        <h4 class="mt-3 font-extrabold text-lg line-clamp-2 leading-tight">The Giant Baking Soda
+                            Volcano! 🌋</h4>
+                        <p class="text-sm font-semibold opacity-60 mt-1">540K views • 2 days ago</p>
+                    </div>
+                </div>
+                <!-- Video Card 2 -->
+                <div class="flex-none w-72 snap-start">
+                    <div class="relative group cursor-pointer">
+                        <div class="aspect-video rounded-xl overflow-hidden border-4 border-white shadow-lg relative">
+                            <img class="w-full h-full object-cover" data-alt="Periodic table song animation video"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuZZfLes3dazSxqTm3TGfCe5IJZsgPEWXfYFYCJG26_FXhJh_91g4xvYvr2lxntNBNSiatLmAgdZysCDTvlc0_TBKILITYJWSAQbo1yV1lenEvI-C_SsORDn80NPbYHq9GfdKUgrD53qcW-c4MbtdfZ0AxDr84Z5MDw38AEQkDpnTdrMEyJ1h3fwLV3dkQ_at0i7hB7vHsfsK_sE7eCItvcOlQtx-ZLtjG4e_ikE-vJvbypyNg__W-mIn0y8kF1WwliW1oZ60u2lE" />
+                            <div
+                                class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                <span
+                                    class="material-symbols-outlined text-6xl text-white drop-shadow-lg opacity-90 group-hover:scale-110 transition-transform">play_arrow</span>
+                            </div>
+                            <div
+                                class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-bold">
+                                04:30</div>
+                        </div>
+                        <h4 class="mt-3 font-extrabold text-lg line-clamp-2 leading-tight">Learn All Elements: The Song
+                            🎵</h4>
+                        <p class="text-sm font-semibold opacity-60 mt-1">1.2M views • 1 week ago</p>
+                    </div>
+                </div>
+                <!-- Video Card 3 -->
+                <div class="flex-none w-72 snap-start">
+                    <div class="relative group cursor-pointer">
+                        <div class="aspect-video rounded-xl overflow-hidden border-4 border-white shadow-lg relative">
+                            <img class="w-full h-full object-cover" data-alt="Kitchen chemistry experiment video"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUQQHe37u2qetBKQU9f0jgX1CVam-bObGdbmTRdg6ysrG50NAvkIKh0VGFc9qh9z04ive-aV6scMRanlGKqPnQkMV0qwxalEI4NLk48LwfHvvBGq2BRYA7EZ7FxYX4dKt2pc8RgX0iJbg0gHf7AMed_gb7Hr4SXUiFpMmglth-uJDG4tPSRonlhTGmmlp5sy55iuPazbNmJeU4_6bb-m43qllGg9oQhMEmyimZkOYBgRLjgkk8SxaedHmCPq5PNJvikm0C7edcGpY" />
+                            <div
+                                class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                <span
+                                    class="material-symbols-outlined text-6xl text-white drop-shadow-lg opacity-90 group-hover:scale-110 transition-transform">play_arrow</span>
+                            </div>
+                            <div
+                                class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-bold">
+                                08:15</div>
+                        </div>
+                        <h4 class="mt-3 font-extrabold text-lg line-clamp-2 leading-tight">Kitchen Chemistry: Magic Milk
+                            🥛</h4>
+                        <p class="text-sm font-semibold opacity-60 mt-1">210K views • 3 days ago</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Topic Chips -->
+        <section class="mb-12">
+            <h3 class="text-2xl font-extrabold mb-6 px-2">Pick a Topic</h3>
+            <div class="flex flex-wrap gap-3">
+                <button
+                    class="px-6 py-3 rounded-full bg-white dark:bg-background-dark border-2 border-primary font-bold hover:bg-primary/10 transition-colors">🔥
+                    Reactions</button>
+                <button
+                    class="px-6 py-3 rounded-full bg-white dark:bg-background-dark border-2 border-kid-green font-bold hover:bg-kid-green/10 transition-colors">🧬
+                    Atoms</button>
+                <button
+                    class="px-6 py-3 rounded-full bg-white dark:bg-background-dark border-2 border-kid-blue font-bold hover:bg-kid-blue/10 transition-colors">💧
+                    Liquids</button>
+                <button
+                    class="px-6 py-3 rounded-full bg-white dark:bg-background-dark border-2 border-kid-purple font-bold hover:bg-kid-purple/10 transition-colors">🔋
+                    Energy</button>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Navigation Dock -->
+    <nav
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white dark:bg-[#2d2c18] rounded-full shadow-2xl px-2 py-2 flex items-center justify-between border border-primary/20 z-50">
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full bg-primary text-[#181711]"
+            href="index.html"><span class="material-symbols-outlined text-2xl font-bold">home</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors"
+            href="courses.html"><span class="material-symbols-outlined text-2xl font-bold">explore</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Explore</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors"
+            href="games.html"><span class="material-symbols-outlined text-2xl font-bold">flare</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">My Lab</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full text-zinc-400 hover:text-primary transition-colors"
+            href="notes.html"><span class="material-symbols-outlined text-2xl font-bold">auto_stories</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Library</p>
+        </a>
+    </nav>
+    </nav>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>
